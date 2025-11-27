@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | PixelCraft Web Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --dark: #2A2D43;
+            --light: #F7F9FC;
+            --accent: #36D1DC;
+            --text: #4A4A68;
+            --success: #4CAF50;
+            --warning: #FF9800;
+            --info: #2196F3;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--dark), #3A3D5F);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            opacity: 0.1;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Last Updated */
+        .last-updated {
+            background: white;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .update-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .update-badge {
+            background: var(--light);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Content Section */
+        .privacy-content {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .policy-section {
+            margin-bottom: 3rem;
+        }
+
+        .policy-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+            display: flex;
+            align-items: center;
+        }
+
+        .policy-section h2 i {
+            color: var(--primary);
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .policy-section h3 {
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            color: var(--dark);
+        }
+
+        .policy-section p {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .policy-section ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .policy-section li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .policy-section li:before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: -1rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .data-table th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight-box {
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--light), #e8ecf1);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+        }
+
+        /* Quick Navigation */
+        .quick-nav {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            position: sticky;
+            top: 100px;
+        }
+
+        .quick-nav h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .quick-links {
+            list-style: none;
+        }
+
+        .quick-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .quick-links a {
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .quick-links a:hover {
+            color: var(--primary);
+        }
+
+        .quick-links i {
+            margin-right: 0.8rem;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--dark), #3A3D5F);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            opacity: 0.1;
+        }
+
+        .cta::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary), #FF8E53);
+            opacity: 0.1;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(108, 99, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(to right, var(--secondary), #FF8E53);
+            color: white;
+            box-shadow: 0 10px 20px rgba(255, 101, 132, 0.3);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(255, 101, 132, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #B8B8D1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .quick-nav {
+                position: static;
+                order: -1;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 1rem;
+                display: block;
+            }
+
+            .update-info {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .data-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .policy-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Content Layout */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="logo-text">PixelCraft</div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="fade-in">Privacy Policy</h1>
+            <p class="fade-in">Your privacy is important to us. Learn how we collect, use, and protect your personal information.</p>
+        </div>
+    </section>
+
+    <!-- Last Updated -->
+    <section class="last-updated">
+        <div class="container">
+            <div class="update-info">
+                <p>This policy describes how PixelCraft Web Design Studio handles your personal information.</p>
+                <div class="update-badge">Last Updated: October 15, 2023</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Content -->
+    <section class="privacy-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Quick Navigation -->
+                <aside class="quick-nav fade-in">
+                    <h3>Quick Navigation</h3>
+                    <ul class="quick-links">
+                        <li><a href="#information-collection"><i class="fas fa-chevron-right"></i> Information We Collect</a></li>
+                        <li><a href="#data-usage"><i class="fas fa-chevron-right"></i> How We Use Your Data</a></li>
+                        <li><a href="#data-sharing"><i class="fas fa-chevron-right"></i> Data Sharing</a></li>
+                        <li><a href="#cookies"><i class="fas fa-chevron-right"></i> Cookies & Tracking</a></li>
+                        <li><a href="#data-security"><i class="fas fa-chevron-right"></i> Data Security</a></li>
+                        <li><a href="#your-rights"><i class="fas fa-chevron-right"></i> Your Rights</a></li>
+                        <li><a href="#children-privacy"><i class="fas fa-chevron-right"></i> Children's Privacy</a></li>
+                        <li><a href="#policy-changes"><i class="fas fa-chevron-right"></i> Policy Changes</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Introduction -->
+                    <div class="policy-section fade-in">
+                        <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+                        <p>At PixelCraft Web Design Studio, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+                        <p>By accessing our website or using our services, you consent to the practices described in this policy. Please read this Privacy Policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access the site or use our services.</p>
+                    </div>
+
+                    <!-- Information Collection -->
+                    <div class="policy-section fade-in" id="information-collection">
+                        <h2><i class="fas fa-database"></i> Information We Collect</h2>
+                        <p>We collect several types of information from and about users of our website, including:</p>
+                        
+                        <h3>Personal Information</h3>
+                        <p>When you contact us, request services, or register on our site, we may collect personal information such as:</p>
+                        <ul>
+                            <li>Name and contact information (email address, phone number, mailing address)</li>
+                            <li>Company information and job title</li>
+                            <li>Payment information for service purchases</li>
+                            <li>Communication preferences</li>
+                        </ul>
+
+                        <h3>Automatically Collected Information</h3>
+                        <p>When you visit our website, we automatically collect certain information about your device and browsing actions, including:</p>
+                        <ul>
+                            <li>IP address and location data</li>
+                            <li>Browser type and version</li>
+                            <li>Operating system and device information</li>
+                            <li>Pages visited and time spent on pages</li>
+                            <li>Referring website addresses</li>
+                        </ul>
+
+                        <div class="highlight-box">
+                            <p><strong>Note:</strong> We do not collect sensitive personal information such as race, religion, or political opinions unless voluntarily provided by you for specific purposes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Data Usage -->
+                    <div class="policy-section fade-in" id="data-usage">
+                        <h2><i class="fas fa-cogs"></i> How We Use Your Information</h2>
+                        <p>We use the information we collect for various business purposes, including:</p>
+                        
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Purpose</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Service Delivery</td>
+                                    <td>To provide and maintain our web design and development services</td>
+                                </tr>
+                                <tr>
+                                    <td>Customer Support</td>
+                                    <td>To respond to your inquiries and provide technical support</td>
+                                </tr>
+                                <tr>
+                                    <td>Marketing</td>
+                                    <td>To send promotional materials and updates about our services (with your consent)</td>
+                                </tr>
+                                <tr>
+                                    <td>Website Improvement</td>
+                                    <td>To analyze website usage and improve our content and user experience</td>
+                                </tr>
+                                <tr>
+                                    <td>Legal Compliance</td>
+                                    <td>To comply with applicable laws, regulations, and legal processes</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Data Sharing -->
+                    <div class="policy-section fade-in" id="data-sharing">
+                        <h2><i class="fas fa-share-alt"></i> Data Sharing and Disclosure</h2>
+                        <p>We do not sell, trade, or rent your personal information to third parties. However, we may share your information in the following circumstances:</p>
+                        
+                        <h3>Service Providers</h3>
+                        <p>We may share your information with trusted third-party service providers who assist us in operating our website, conducting our business, or servicing you, such as:</p>
+                        <ul>
+                            <li>Payment processors for transaction handling</li>
+                            <li>Email service providers for communication</li>
+                            <li>Analytics providers for website optimization</li>
+                            <li>Hosting providers for website maintenance</li>
+                        </ul>
+
+                        <h3>Legal Requirements</h3>
+                        <p>We may disclose your information when required by law or in response to valid requests by public authorities (e.g., court orders, subpoenas).</p>
+
+                        <h3>Business Transfers</h3>
+                        <p>In the event of a merger, acquisition, or sale of all or a portion of our assets, your personal information may be transferred to the acquiring entity.</p>
+                    </div>
+
+                    <!-- Cookies -->
+                    <div class="policy-section fade-in" id="cookies">
+                        <h2><i class="fas fa-cookie-bite"></i> Cookies and Tracking Technologies</h2>
+                        <p>We use cookies and similar tracking technologies to track activity on our website and hold certain information. Cookies are files with a small amount of data that may include an anonymous unique identifier.</p>
+                        
+                        <h3>Types of Cookies We Use</h3>
+                        <ul>
+                            <li><strong>Essential Cookies:</strong> Required for the basic functionality of our website</li>
+                            <li><strong>Performance Cookies:</strong> Help us understand how visitors interact with our website</li>
+                            <li><strong>Functionality Cookies:</strong> Allow the website to remember choices you make</li>
+                            <li><strong>Targeting Cookies:</strong> Used to deliver relevant advertisements</li>
+                        </ul>
+
+                        <h3>Managing Cookies</h3>
+                        <p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our website.</p>
+                    </div>
+
+                    <!-- Data Security -->
+                    <div class="policy-section fade-in" id="data-security">
+                        <h2><i class="fas fa-lock"></i> Data Security</h2>
+                        <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+                        
+                        <ul>
+                            <li>SSL encryption for data transmission</li>
+                            <li>Regular security assessments and updates</li>
+                            <li>Access controls and authentication procedures</li>
+                            <li>Secure data storage with encryption</li>
+                            <li>Regular staff training on data protection</li>
+                        </ul>
+
+                        <div class="highlight-box">
+                            <p><strong>Important:</strong> While we strive to use commercially acceptable means to protect your personal information, no method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security.</p>
+                        </div>
+                    </div>
+
+                    <!-- Your Rights -->
+                    <div class="policy-section fade-in" id="your-rights">
+                        <h2><i class="fas fa-user-shield"></i> Your Data Protection Rights</h2>
+                        <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+                        
+                        <h3>Access and Portability</h3>
+                        <p>You have the right to request copies of your personal information and to receive it in a structured, commonly used format.</p>
+
+                        <h3>Rectification</h3>
+                        <p>You have the right to request that we correct any information you believe is inaccurate or complete information you believe is incomplete.</p>
+
+                        <h3>Erasure</h3>
+                        <p>You have the right to request that we erase your personal information, under certain conditions.</p>
+
+                        <h3>Restriction of Processing</h3>
+                        <p>You have the right to request that we restrict the processing of your personal information, under certain conditions.</p>
+
+                        <h3>Objection to Processing</h3>
+                        <p>You have the right to object to our processing of your personal information, under certain conditions.</p>
+
+                        <h3>Withdraw Consent</h3>
+                        <p>Where we rely on your consent to process your personal information, you have the right to withdraw that consent at any time.</p>
+
+                        <div class="contact-info">
+                            <h3>Exercising Your Rights</h3>
+                            <p>To exercise any of these rights, please contact us using the information provided in the "Contact Us" section below. We will respond to your request within 30 days.</p>
+                        </div>
+                    </div>
+
+                    <!-- Children's Privacy -->
+                    <div class="policy-section fade-in" id="children-privacy">
+                        <h2><i class="fas fa-child"></i> Children's Privacy</h2>
+                        <p>Our website and services are not intended for children under the age of 16. We do not knowingly collect personal information from children under 16. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us.</p>
+                        <p>If we become aware that we have collected personal information from a child under age 16 without verification of parental consent, we take steps to remove that information from our servers.</p>
+                    </div>
+
+                    <!-- Policy Changes -->
+                    <div class="policy-section fade-in" id="policy-changes">
+                        <h2><i class="fas fa-sync-alt"></i> Changes to This Privacy Policy</h2>
+                        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+                        <p>We will also notify registered users via email and/or a prominent notice on our website prior to the change becoming effective.</p>
+                        <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="policy-section fade-in" id="contact">
+                        <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+                        <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                        
+                        <div class="contact-info">
+                            <h3>PixelCraft Web Design Studio</h3>
+                            <p><strong>Email:</strong> privacy@pixelcraft.com</p>
+                            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                            <p><strong>Address:</strong> 123 Design Street, Creative District, San Francisco, CA 94102</p>
+                            <p><strong>Data Protection Officer:</strong> Sarah Johnson (dpo@pixelcraft.com)</p>
+                        </div>
+
+                        <p>For residents of the European Economic Area (EEA), you also have the right to lodge a complaint with your local data protection authority.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Have Questions About Your Privacy?</h2>
+                <p>Our team is here to help you understand how we protect your data and address any concerns you may have.</p>
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                <a href="#" class="btn btn-secondary" id="dataRequestBtn">Submit Data Request</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="cus.html">Custom Web Design</a></li>
+                        <li><a href="e-commerce.html">E-Commerce Solutions</a></li>
+                        <li><a href="SEO & DigitalMarketingPage.html">SEO & Digital Marketing</a></li>
+                        <li><a href="maintenance.html">Website Maintenance</a></li>
+                        <li><a href="branding.html">Brand Identity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                        <li><a href="gdpr.html">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 PixelCraft Web Design Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.opacity = 1;
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state
+            fadeElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            });
+            
+            window.addEventListener('scroll', fadeInOnScroll);
+            fadeInOnScroll(); // Check on load
+
+            // Smooth scrolling for quick navigation
+            document.querySelectorAll('.quick-links a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Data request button
+        document.getElementById('dataRequestBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('In a real implementation, this would open a data request form where users can submit requests regarding their personal data (access, correction, deletion, etc.).');
+        });
+    </script>
+</body>
+</html>

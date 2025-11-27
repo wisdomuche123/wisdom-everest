@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | PixelCraft Web Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --dark: #2A2D43;
+            --light: #F7F9FC;
+            --accent: #36D1DC;
+            --text: #4A4A68;
+            --success: #4CAF50;
+            --warning: #FF9800;
+            --info: #2196F3;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--dark), #3A3D5F);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            opacity: 0.1;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Last Updated */
+        .last-updated {
+            background: white;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .update-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .update-badge {
+            background: var(--light);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .effective-date {
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        /* Content Section */
+        .terms-content {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .terms-section {
+            margin-bottom: 3rem;
+        }
+
+        .terms-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+            display: flex;
+            align-items: center;
+        }
+
+        .terms-section h2 i {
+            color: var(--primary);
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .terms-section h3 {
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            color: var(--dark);
+        }
+
+        .terms-section p {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .terms-section ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .terms-section li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .terms-section li:before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: -1rem;
+        }
+
+        .terms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .terms-table th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .terms-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .terms-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .warning-box {
+            background: #FFF3E0;
+            border-left: 4px solid var(--warning);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box {
+            background: var(--light);
+            border-left: 4px solid var(--info);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--light), #e8ecf1);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+        }
+
+        /* Quick Navigation */
+        .quick-nav {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            position: sticky;
+            top: 100px;
+        }
+
+        .quick-nav h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .quick-links {
+            list-style: none;
+        }
+
+        .quick-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .quick-links a {
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .quick-links a:hover {
+            color: var(--primary);
+        }
+
+        .quick-links i {
+            margin-right: 0.8rem;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        /* Acceptance Section */
+        .acceptance-box {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .acceptance-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--dark), #3A3D5F);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            opacity: 0.1;
+        }
+
+        .cta::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary), #FF8E53);
+            opacity: 0.1;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(108, 99, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #B8B8D1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .quick-nav {
+                position: static;
+                order: -1;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 1rem;
+                display: block;
+            }
+
+            .update-info {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .terms-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .terms-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Content Layout */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Numbered Sections */
+        .numbered-section {
+            counter-increment: section;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .numbered-section h2:before {
+            content: counter(section) ".";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="logo-text">PixelCraft</div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="fade-in">Terms of Service</h1>
+            <p class="fade-in">Please read these terms carefully before using our website or services.</p>
+        </div>
+    </section>
+
+    <!-- Last Updated -->
+    <section class="last-updated">
+        <div class="container">
+            <div class="update-info">
+                <div class="effective-date">Effective Date: October 15, 2023</div>
+                <div class="update-badge">Last Updated: October 15, 2023</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="terms-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Quick Navigation -->
+                <aside class="quick-nav fade-in">
+                    <h3>Quick Navigation</h3>
+                    <ul class="quick-links">
+                        <li><a href="#acceptance"><i class="fas fa-chevron-right"></i> Acceptance of Terms</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services Description</a></li>
+                        <li><a href="#user-obligations"><i class="fas fa-chevron-right"></i> User Obligations</a></li>
+                        <li><a href="#payments"><i class="fas fa-chevron-right"></i> Payments & Billing</a></li>
+                        <li><a href="#intellectual-property"><i class="fas fa-chevron-right"></i> Intellectual Property</a></li>
+                        <li><a href="#privacy"><i class="fas fa-chevron-right"></i> Privacy & Data</a></li>
+                        <li><a href="#termination"><i class="fas fa-chevron-right"></i> Termination</a></li>
+                        <li><a href="#disclaimer"><i class="fas fa-chevron-right"></i> Disclaimers</a></li>
+                        <li><a href="#liability"><i class="fas fa-chevron-right"></i> Limitation of Liability</a></li>
+                        <li><a href="#governing-law"><i class="fas fa-chevron-right"></i> Governing Law</a></li>
+                        <li><a href="#changes"><i class="fas fa-chevron-right"></i> Changes to Terms</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Information</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Acceptance Section -->
+                    <div class="acceptance-box fade-in">
+                        <h3>Important Legal Notice</h3>
+                        <p>By accessing our website or using our services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.</p>
+                    </div>
+
+                    <!-- Acceptance of Terms -->
+                    <div class="terms-section numbered-section fade-in" id="acceptance">
+                        <h2><i class="fas fa-check-circle"></i> Acceptance of Terms</h2>
+                        <p>These Terms of Service ("Terms") govern your access to and use of PixelCraft Web Design Studio's website, services, and applications (collectively, the "Services"). By accessing or using our Services, you agree to be bound by these Terms.</p>
+                        
+                        <h3>Eligibility</h3>
+                        <p>You must be at least 18 years old to use our Services. By using our Services, you represent and warrant that you meet this eligibility requirement.</p>
+
+                        <h3>Modification of Terms</h3>
+                        <p>We reserve the right to modify these Terms at any time. We will provide notice of material changes to the Terms by posting the updated Terms on our website and updating the "Last Updated" date. Your continued use of our Services after such changes constitutes your acceptance of the new Terms.</p>
+                    </div>
+
+                    <!-- Services Description -->
+                    <div class="terms-section numbered-section fade-in" id="services">
+                        <h2><i class="fas fa-concierge-bell"></i> Services Description</h2>
+                        <p>PixelCraft Web Design Studio provides web design, development, and digital marketing services including but not limited to:</p>
+                        
+                        <ul>
+                            <li>Custom website design and development</li>
+                            <li>E-commerce solutions and online store setup</li>
+                            <li>Search engine optimization (SEO) services</li>
+                            <li>Website maintenance and support</li>
+                            <li>Brand identity and graphic design</li>
+                            <li>Digital marketing and advertising</li>
+                        </ul>
+
+                        <div class="info-box">
+                            <p><strong>Service Availability:</strong> We strive to provide uninterrupted access to our Services, but we do not guarantee that our Services will be available at all times. We may suspend or terminate Services for maintenance, updates, or other reasons.</p>
+                        </div>
+                    </div>
+
+                    <!-- User Obligations -->
+                    <div class="terms-section numbered-section fade-in" id="user-obligations">
+                        <h2><i class="fas fa-user-check"></i> User Obligations</h2>
+                        <p>When using our Services, you agree to:</p>
+                        
+                        <h3>Prohibited Activities</h3>
+                        <p>You may not use our Services to:</p>
+                        <ul>
+                            <li>Violate any applicable laws or regulations</li>
+                            <li>Infringe upon any intellectual property rights</li>
+                            <li>Transmit any malicious code, viruses, or harmful content</li>
+                            <li>Engage in fraudulent, deceptive, or misleading practices</li>
+                            <li>Harass, abuse, or harm another person</li>
+                            <li>Collect or track personal information of others</li>
+                            <li>Interfere with or disrupt the integrity of our Services</li>
+                        </ul>
+
+                        <h3>Account Responsibility</h3>
+                        <p>If you create an account with us, you are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.</p>
+
+                        <div class="warning-box">
+                            <p><strong>Warning:</strong> Violation of these obligations may result in immediate termination of your access to our Services and may subject you to civil and criminal penalties.</p>
+                        </div>
+                    </div>
+
+                    <!-- Payments & Billing -->
+                    <div class="terms-section numbered-section fade-in" id="payments">
+                        <h2><i class="fas fa-credit-card"></i> Payments & Billing</h2>
+                        <p>Our Services may require payment of fees. By using paid Services, you agree to our pricing and payment terms.</p>
+                        
+                        <h3>Pricing and Fees</h3>
+                        <p>All prices are quoted in US dollars unless otherwise specified. We reserve the right to change our prices at any time, but we will provide you with notice of any price changes affecting existing subscriptions.</p>
+
+                        <h3>Payment Terms</h3>
+                        <p>Payment is due as specified in your service agreement. Late payments may be subject to interest charges and may result in suspension or termination of Services.</p>
+
+                        <h3>Refund Policy</h3>
+                        <p>Refund eligibility varies by service type:</p>
+                        
+                        <table class="terms-table">
+                            <thead>
+                                <tr>
+                                    <th>Service Type</th>
+                                    <th>Refund Policy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Web Design Projects</td>
+                                    <td>Partial refunds available during early stages; no refunds after project completion</td>
+                                </tr>
+                                <tr>
+                                    <td>Monthly Services</td>
+                                    <td>Pro-rated refunds for unused portion of monthly service</td>
+                                </tr>
+                                <tr>
+                                    <td>One-time Services</td>
+                                    <td>No refunds after service delivery</td>
+                                </tr>
+                                <tr>
+                                    <td>Digital Products</td>
+                                    <td>No refunds for downloaded digital products</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Intellectual Property -->
+                    <div class="terms-section numbered-section fade-in" id="intellectual-property">
+                        <h2><i class="fas fa-copyright"></i> Intellectual Property</h2>
+                        <p>All content, features, and functionality of our Services are owned by PixelCraft Web Design Studio and are protected by international copyright, trademark, and other intellectual property laws.</p>
+                        
+                        <h3>Our Intellectual Property</h3>
+                        <p>You may not copy, modify, distribute, sell, or lease any part of our Services or included software, nor may you reverse engineer or attempt to extract the source code of that software.</p>
+
+                        <h3>Your Content</h3>
+                        <p>You retain ownership of any intellectual property rights that you hold in content that you submit to our Services. By submitting content, you grant us a worldwide license to use, host, store, reproduce, modify, and create derivative works for the purpose of providing our Services.</p>
+
+                        <h3>Copyright Complaints</h3>
+                        <p>We respect the intellectual property rights of others. If you believe that your work has been copied in a way that constitutes copyright infringement, please contact us at legal@pixelcraft.com.</p>
+                    </div>
+
+                    <!-- Privacy & Data -->
+                    <div class="terms-section numbered-section fade-in" id="privacy">
+                        <h2><i class="fas fa-shield-alt"></i> Privacy & Data</h2>
+                        <p>Your privacy is important to us. Our Privacy Policy explains how we collect, use, and protect your personal information.</p>
+                        
+                        <h3>Data Collection</h3>
+                        <p>We collect information necessary to provide our Services, improve user experience, and communicate with you. This may include personal information, usage data, and technical information.</p>
+
+                        <h3>Data Usage</h3>
+                        <p>We use your data to provide and improve our Services, communicate with you, and for security and fraud prevention purposes.</p>
+
+                        <h3>Data Protection</h3>
+                        <p>We implement appropriate security measures to protect your data, but we cannot guarantee absolute security.</p>
+
+                        <div class="info-box">
+                            <p>For detailed information about our data practices, please review our <a href="privacy.html" style="color: var(--info);">Privacy Policy</a>.</p>
+                        </div>
+                    </div>
+
+                    <!-- Termination -->
+                    <div class="terms-section numbered-section fade-in" id="termination">
+                        <h2><i class="fas fa-ban"></i> Termination</h2>
+                        <p>These Terms remain in effect while you use our Services. We may suspend or terminate your access to our Services at any time for any reason, including if you violate these Terms.</p>
+                        
+                        <h3>Termination by You</h3>
+                        <p>You may stop using our Services at any time. For paid Services, you may need to follow specific cancellation procedures outlined in your service agreement.</p>
+
+                        <h3>Termination by Us</h3>
+                        <p>We may terminate or suspend your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
+
+                        <h3>Effect of Termination</h3>
+                        <p>Upon termination, your right to use the Services will immediately cease. All provisions of the Terms which by their nature should survive termination shall survive termination.</p>
+                    </div>
+
+                    <!-- Disclaimers -->
+                    <div class="terms-section numbered-section fade-in" id="disclaimer">
+                        <h2><i class="fas fa-exclamation-triangle"></i> Disclaimers</h2>
+                        <p>Our Services are provided "as is" and "as available" without warranties of any kind, either express or implied.</p>
+                        
+                        <h3>No Warranties</h3>
+                        <p>We do not warrant that:</p>
+                        <ul>
+                            <li>Our Services will meet your specific requirements</li>
+                            <li>Our Services will be uninterrupted, timely, secure, or error-free</li>
+                            <li>The results that may be obtained from the use of our Services will be accurate or reliable</li>
+                            <li>The quality of any products, services, information, or other material obtained through our Services will meet your expectations</li>
+                        </ul>
+
+                        <h3>Third-Party Services</h3>
+                        <p>Our Services may contain links to third-party websites or services that are not owned or controlled by PixelCraft. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.</p>
+                    </div>
+
+                    <!-- Limitation of Liability -->
+                    <div class="terms-section numbered-section fade-in" id="liability">
+                        <h2><i class="fas fa-balance-scale"></i> Limitation of Liability</h2>
+                        <p>To the maximum extent permitted by applicable law, PixelCraft Web Design Studio shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.</p>
+                        
+                        <h3>Direct Damages</h3>
+                        <p>Our total liability for any claims under these Terms, including for any implied warranties, is limited to the amount you paid us to use the Services in the twelve (12) months prior to the event giving rise to the claim.</p>
+
+                        <h3>Jurisdictional Limitations</h3>
+                        <p>Some jurisdictions do not allow the exclusion of certain warranties or the limitation or exclusion of liability for incidental or consequential damages. Accordingly, some of the above limitations may not apply to you.</p>
+                    </div>
+
+                    <!-- Governing Law -->
+                    <div class="terms-section numbered-section fade-in" id="governing-law">
+                        <h2><i class="fas fa-globe"></i> Governing Law</h2>
+                        <p>These Terms shall be governed and construed in accordance with the laws of the State of California, United States, without regard to its conflict of law provisions.</p>
+                        
+                        <h3>Dispute Resolution</h3>
+                        <p>Any dispute arising from these Terms or your use of our Services shall be resolved through binding arbitration in San Francisco, California, in accordance with the rules of the American Arbitration Association.</p>
+
+                        <h3>Class Action Waiver</h3>
+                        <p>You agree that any arbitration or proceeding shall be limited to the dispute between us individually. There is no right or authority for any dispute to be brought on a class-action basis or to utilize class action procedures.</p>
+                    </div>
+
+                    <!-- Changes to Terms -->
+                    <div class="terms-section numbered-section fade-in" id="changes">
+                        <h2><i class="fas fa-sync-alt"></i> Changes to Terms</h2>
+                        <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect.</p>
+                        
+                        <h3>Notification of Changes</h3>
+                        <p>We will notify you of material changes to these Terms by:</p>
+                        <ul>
+                            <li>Posting the updated Terms on our website</li>
+                            <li>Sending an email to the address associated with your account</li>
+                            <li>Displaying a prominent notice within our Services</li>
+                        </ul>
+
+                        <h3>Continued Use</h3>
+                        <p>By continuing to access or use our Services after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use our Services.</p>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="terms-section fade-in" id="contact">
+                        <h2><i class="fas fa-envelope"></i> Contact Information</h2>
+                        <p>If you have any questions about these Terms, please contact us:</p>
+                        
+                        <div class="contact-info">
+                            <h3>PixelCraft Web Design Studio</h3>
+                            <p><strong>Email:</strong> legal@pixelcraft.com</p>
+                            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                            <p><strong>Address:</strong> 123 Design Street, Creative District, San Francisco, CA 94102</p>
+                            <p><strong>Legal Department:</strong> Sarah Johnson (legal@pixelcraft.com)</p>
+                        </div>
+
+                        <p>For general inquiries, please use our <a href="contact.html">contact form</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Have Questions About Our Terms?</h2>
+                <p>Our legal team is available to answer any questions you may have about our Terms of Service.</p>
+                <a href="contact.html" class="btn btn-primary">Contact Legal Team</a>
+                <a href="privacy.html" class="btn btn-secondary">View Privacy Policy</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="cus.html">Custom Web Design</a></li>
+                        <li><a href="ecommerce.html">E-Commerce Solutions</a></li>
+                        <li><a href="seo.html">SEO & Digital Marketing</a></li>
+                        <li><a href="maintenance.html">Website Maintenance</a></li>
+                        <li><a href="branding.html">Brand Identity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                        <li><a href="gdpr.html">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 PixelCraft Web Design Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.opacity = 1;
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state
+            fadeElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            });
+            
+            window.addEventListener('scroll', fadeInOnScroll);
+            fadeInOnScroll(); // Check on load
+
+            // Smooth scrolling for quick navigation
+            document.querySelectorAll('.quick-links a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Initialize section numbering
+            const sections = document.querySelectorAll('.numbered-section');
+            sections.forEach((section, index) => {
+                section.style.counterReset = 'section ' + index;
+            });
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
